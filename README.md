@@ -1,8 +1,19 @@
 # HexagonalJsonApi
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hexagonal_json_api`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a very simple pattern for modeling Rails JSON API requests in different layers based on their different responsibilities:
+* Use Case Services - Each service `executes` a single Controller action's work
+* Validators - Services use one or more Validator objects to validate/authorize the request
+* Presenters - Formats the result data returned by the Service execution
+* Data Objects - Services encapsulate the result data in a single data object which can pass through the narrow interface between the Service and the Presenter.
+* Responses - Encapsulates the final response to give back to the Controller
 
-TODO: Delete this and the text above, and describe your gem
+The app's business logic can be further abstracted out into logic classes that are invoked by the Services.
+ 
+### Benefits:
+* Each layer is segregated and can be tested independently.
+* Narrow, Hardened interfaces between the different layers.
+* Service and Presenter combinations can be changed easily. 
+
 
 ## Installation
 
