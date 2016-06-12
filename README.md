@@ -1,5 +1,7 @@
 # HexagonalJsonApi
 
+[![CircleCI](https://circleci.com/gh/subodhkhanduri1/hexagonal_json_api/tree/master.svg?style=shield)](https://circleci.com/gh/subodhkhanduri1/hexagonal_json_api/tree/master)
+
 This is a very simple pattern for modeling Rails JSON API requests in different layers based on their different responsibilities:
 * Use Case Services - Each service `executes` a single Controller action's work
 * Validators - Services use one or more Validator objects to validate/authorize the request
